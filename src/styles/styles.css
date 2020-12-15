@@ -1,0 +1,3 @@
+.main-container {
+  @apply container bg-gray-500 rounded-md p-4 w-2/3 mx-auto mt-10 min-h-full text-white
+}

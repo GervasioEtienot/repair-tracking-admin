@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { HashRouter as Router, Switch, Route, Redirect } from "react-router-dom";
+import { LoginScreen } from './components/LoginScreen';
+import { MainScreen } from './components/MainScreen';
+import { MenuScreen } from './components/MenuScreen';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1 className="text-7xl font-bold text-white text-center pt-10" >WorldCel</h1>
+      <Router hashType="slash" >
+        <Switch>
+          <Route exact path="/" component={LoginScreen} />
+          <Route exact path="/menu" component={MenuScreen} />
+          <Route exact path="/main" component={MainScreen} />
+          <Redirect to="/" />
+        </Switch>
+      </Router>
     </div>
-  );
+  )
 }
-
 export default App;
